@@ -1,5 +1,6 @@
 # 9-2 `NULL`s and `VOID`s and `UNDEFINED`s galore
 
+## Please remember to define variables.
 - `Undefined`: a parameter or value that has not been assigned a value. Does not entirely mean "no value", just unspecified.
 
 ```
@@ -39,3 +40,25 @@ craftingMaterials[0] = "sand"
 console.log(craftingMaterials[0] //sand
 ```
 Now our array is mutated and our code is filled with sand 😠
+
+A good solution to avoid instances like this is to write them as Object Literals.
+
+### Avoid function scoping problems and utilizing Object Literals
+
+- Objects, or object literals, are similar to arrays, except with alot more structure and direct references to the values assigned within.
+```
+const houseParts = {
+floorFlavor: "Mahogany"
+floorPlanks: 32;
+hoaApproved: false;
+};
+
+console.log (houseParts[floorFlavor]); // Getting the value via bracket notation
+console.log (houseParts.floorPlanks); // Dot notatin. Do it however you please I am not your God.
+```
+
+Object literals, arrays, or any composite data type can be useful when using functions that may not be able to utilize primitive data types as easily.<br/>
+Otherwise you get what happened to me during Thursday's assignments 🙃<br/>
+If a variable is declared inside of the function, it won't be accessible anywhere else. It's possible to access variables from outside the function scope though that is not recommended. <br/
+
+_Important note_: Do not type a variable both inside and outside the function with the same name. This is known as variable shadowing and only confuses both you and the code.
